@@ -19,6 +19,7 @@
     "strip-indent": "^1.0.1"
   },
   "devDependencies": {
+    "faker": "^3.0.1",
     "jasmine-set": "^0.1.11"
   }
 }
