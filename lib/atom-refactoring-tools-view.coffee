@@ -1,8 +1,14 @@
 module.exports =
 class AtomRefactoringToolsView
   constructor: (serializedState) ->
+    getEditor = =>
+      @getElement().querySelector('atom-text-editor[mini]').getModel()
+
     @getElement = ->
       element
+
+    @getText =->
+      getEditor().getText()
 
     @reset = ->
       element.innerHTML = """

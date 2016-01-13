@@ -1,4 +1,5 @@
 AtomRefactoringToolsView = require '../lib/atom-refactoring-tools-view'
+faker = require 'faker'
 
 describe "AtomRefactoringToolsView", ->
   pristineHTML = """
@@ -23,3 +24,11 @@ describe "AtomRefactoringToolsView", ->
 
     it 'returns the object, for chainability', ->
       expect(@view.reset()).toBe @view
+
+  describe 'getText', ->
+    it 'returns the contents of the mini editor', ->
+      editor = @element.querySelector('atom-text-editor[mini]').getModel()
+      text = faker.lorem.sentence()
+      editor.setText text
+
+      expect(@view.getText()).toBe text

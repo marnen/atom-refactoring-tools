@@ -43,7 +43,7 @@ module.exports = AtomRefactoringTools =
   extractMethodFinish: ->
     @modalPanel.hide()
     if editor = atom.workspace.getActiveTextEditor()
-      methodName = @atomRefactoringToolsView.getElement().querySelector('atom-text-editor[mini]').getModel().getText()
+      methodName = @atomRefactoringToolsView.getText()
       editor.cutSelectedText()
       methodBody = atom.clipboard.read()
       strippedMethodBody = stripIndent methodBody
