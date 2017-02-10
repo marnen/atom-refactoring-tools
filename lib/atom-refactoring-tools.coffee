@@ -19,7 +19,7 @@ module.exports = AtomRefactoringTools =
       'atom-refactoring-tools:extract-method': => @extractMethod(),
       'core:cancel': => @modalPanel.hide()
       'core:confirm': =>
-        @extractMethodFinish()
+        @extractMethodFinish() # TODO: this contaminates the search panel.
 
   deactivate: ->
     @modalPanel.destroy()
